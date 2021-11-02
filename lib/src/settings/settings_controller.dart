@@ -11,6 +11,14 @@ import 'settings_service.dart';
 class SettingsController with ChangeNotifier {
   SettingsController(this._settingsService);
 
+  //localize
+  Locale? _locale;
+  Locale? get locale => _locale;
+  void setLocale(Locale? locale) {
+    _locale = locale;
+    notifyListeners();
+  }
+
   // Make SettingsService a private variable so it is not used directly.
   final SettingsService _settingsService;
 

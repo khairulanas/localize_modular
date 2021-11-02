@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
+          locale: settingsController.locale,
           supportedLocales: const [
             Locale('en', ''), // English, no country code
             Locale('id', ''), // Indonesia, no country code
