@@ -1,4 +1,4 @@
-name: home
+name: detail
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -24,7 +24,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-  generate: true
 
   # To add assets to your package, add an assets section, like this:
   # assets:

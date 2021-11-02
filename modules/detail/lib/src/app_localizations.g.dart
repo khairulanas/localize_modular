@@ -9,10 +9,10 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_en.dart';
 import 'app_localizations_id.dart';
 
-/// Callers can lookup localized strings with an instance of AppLocalizationsHome returned
-/// by `AppLocalizationsHome.of(context)`.
+/// Callers can lookup localized strings with an instance of AppLocalizationsDetail returned
+/// by `AppLocalizationsDetail.of(context)`.
 ///
-/// Applications need to include `AppLocalizationsHome.delegate()` in their app's
+/// Applications need to include `AppLocalizationsDetail.delegate()` in their app's
 /// localizationDelegates list, and the locales they support in the app's
 /// supportedLocales list. For example:
 ///
@@ -20,8 +20,8 @@ import 'app_localizations_id.dart';
 /// import 'src/app_localizations.g.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: AppLocalizationsHome.localizationsDelegates,
-///   supportedLocales: AppLocalizationsHome.supportedLocales,
+///   localizationsDelegates: AppLocalizationsDetail.localizationsDelegates,
+///   supportedLocales: AppLocalizationsDetail.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -58,18 +58,18 @@ import 'app_localizations_id.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the AppLocalizationsHome.supportedLocales
+/// be consistent with the languages listed in the AppLocalizationsDetail.supportedLocales
 /// property.
-abstract class AppLocalizationsHome {
-  AppLocalizationsHome(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class AppLocalizationsDetail {
+  AppLocalizationsDetail(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static AppLocalizationsHome? of(BuildContext context) {
-    return Localizations.of<AppLocalizationsHome>(context, AppLocalizationsHome);
+  static AppLocalizationsDetail? of(BuildContext context) {
+    return Localizations.of<AppLocalizationsDetail>(context, AppLocalizationsDetail);
   }
 
-  static const LocalizationsDelegate<AppLocalizationsHome> delegate = _AppLocalizationsHomeDelegate();
+  static const LocalizationsDelegate<AppLocalizationsDetail> delegate = _AppLocalizationsDetailDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -103,36 +103,36 @@ abstract class AppLocalizationsHome {
   /// No description provided for @home.
   ///
   /// In en, this message translates to:
-  /// **'home page'**
+  /// **'detail page'**
   String get home;
 }
 
-class _AppLocalizationsHomeDelegate extends LocalizationsDelegate<AppLocalizationsHome> {
-  const _AppLocalizationsHomeDelegate();
+class _AppLocalizationsDetailDelegate extends LocalizationsDelegate<AppLocalizationsDetail> {
+  const _AppLocalizationsDetailDelegate();
 
   @override
-  Future<AppLocalizationsHome> load(Locale locale) {
-    return SynchronousFuture<AppLocalizationsHome>(lookupAppLocalizationsHome(locale));
+  Future<AppLocalizationsDetail> load(Locale locale) {
+    return SynchronousFuture<AppLocalizationsDetail>(lookupAppLocalizationsDetail(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['en', 'id'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_AppLocalizationsHomeDelegate old) => false;
+  bool shouldReload(_AppLocalizationsDetailDelegate old) => false;
 }
 
-AppLocalizationsHome lookupAppLocalizationsHome(Locale locale) {
+AppLocalizationsDetail lookupAppLocalizationsDetail(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return AppLocalizationsHomeEn();
-    case 'id': return AppLocalizationsHomeId();
+    case 'en': return AppLocalizationsDetailEn();
+    case 'id': return AppLocalizationsDetailId();
   }
 
   throw FlutterError(
-    'AppLocalizationsHome.delegate failed to load unsupported locale "$locale". This is likely '
+    'AppLocalizationsDetail.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'

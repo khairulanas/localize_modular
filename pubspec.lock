@@ -43,6 +43,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+  detail:
+    dependency: "direct main"
+    description:
+      path: "modules/detail"
+      relative: true
+    source: path
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -72,13 +79,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  home:
-    dependency: "direct main"
-    description:
-      path: home
-      relative: true
-    source: path
-    version: "0.0.1"
   intl:
     dependency: "direct main"
     description:

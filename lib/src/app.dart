@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:home/home.dart';
+import 'package:detail/detail.dart';
 
 import 'app_localizations.g.dart';
 import 'sample_feature/sample_item_details_view.dart';
@@ -38,14 +38,14 @@ class MyApp extends StatelessWidget {
           // depending on the user's locale.
           localizationsDelegates: const [
             AppLocalizations.delegate,
-            AppLocalizationsHome.delegate,
+            AppLocalizationsDetail.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [
             Locale('en', ''), // English, no country code
-            Locale('id', ''), // English, no country code
+            Locale('id', ''), // Indonesia, no country code
           ],
 
           // Use AppLocalizations to configure the correct application title

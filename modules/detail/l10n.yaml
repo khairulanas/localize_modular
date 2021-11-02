@@ -6,4 +6,4 @@ synthetic-package: false
 
 
 output-localization-file: app_localizations.g.dart
-output-class: AppLocalizationsHome
+output-class: AppLocalizationsDetail

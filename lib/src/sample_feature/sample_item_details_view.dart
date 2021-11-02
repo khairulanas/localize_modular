@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home/home_page.dart';
-import 'package:localize_modular/src/app_localizations.g.dart';
+import 'package:detail/detail.dart';
 
 /// Displays detailed information about a SampleItem.
 class SampleItemDetailsView extends StatelessWidget {
@@ -15,7 +14,7 @@ class SampleItemDetailsView extends StatelessWidget {
         title: const Text('Item Details'),
       ),
       body: const Center(
-        child: HomePage(),
+        child: DetailPage(),
       ),
     );
   }
