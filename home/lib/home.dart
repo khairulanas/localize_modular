@@ -1,7 +1,4 @@
 library home;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/app_localizations.g.dart';
+export 'home_page.dart';

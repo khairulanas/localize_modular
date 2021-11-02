@@ -14,14 +14,8 @@ class SampleItemDetailsView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Item Details'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(AppLocalizations.of(context)!.appTitle),
-            const HomePage(),
-          ],
-        ),
+      body: const Center(
+        child: HomePage(),
       ),
     );
   }

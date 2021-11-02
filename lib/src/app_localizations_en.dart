@@ -9,4 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appTitle => 'localize_modular';
+
+  @override
+  String get sampleItem => 'Sample Item';
 }

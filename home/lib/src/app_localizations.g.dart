@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
+import 'app_localizations_id.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizationsHome returned
 /// by `AppLocalizationsHome.of(context)`.
@@ -16,7 +17,7 @@ import 'app_localizations_en.dart';
 /// supportedLocales list. For example:
 ///
 /// ```
-/// import 'lib/app_localizations.g.dart';
+/// import 'src/app_localizations.g.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: AppLocalizationsHome.localizationsDelegates,
@@ -89,7 +90,8 @@ abstract class AppLocalizationsHome {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('en')
+    Locale('en'),
+    Locale('id')
   ];
 
   /// The title of the application
@@ -101,14 +103,8 @@ abstract class AppLocalizationsHome {
   /// No description provided for @home.
   ///
   /// In en, this message translates to:
-  /// **'home text'**
+  /// **'home page'**
   String get home;
-
-  /// No description provided for @detail.
-  ///
-  /// In en, this message translates to:
-  /// **'detail text'**
-  String get detail;
 }
 
 class _AppLocalizationsHomeDelegate extends LocalizationsDelegate<AppLocalizationsHome> {
@@ -120,7 +116,7 @@ class _AppLocalizationsHomeDelegate extends LocalizationsDelegate<AppLocalizatio
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'id'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsHomeDelegate old) => false;
@@ -132,6 +128,7 @@ AppLocalizationsHome lookupAppLocalizationsHome(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en': return AppLocalizationsHomeEn();
+    case 'id': return AppLocalizationsHomeId();
   }
 
   throw FlutterError(

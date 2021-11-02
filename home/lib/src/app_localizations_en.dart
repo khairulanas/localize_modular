@@ -11,8 +11,5 @@ class AppLocalizationsHomeEn extends AppLocalizationsHome {
   String get appTitle => 'localize_modular';
 
   @override
-  String get home => 'home text';
-
-  @override
-  String get detail => 'detail text';
+  String get home => 'home page';
 }

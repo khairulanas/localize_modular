@@ -1,7 +1,7 @@
-arb-dir: lib/localization
+arb-dir: lib/src/localization
 template-arb-file: app_en.arb
 
-output-dir: lib/
+output-dir: lib/src
 synthetic-package: false
 
 
