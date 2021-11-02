@@ -1,0 +1,6 @@
+{
+  "appTitle": "localize_modular",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
